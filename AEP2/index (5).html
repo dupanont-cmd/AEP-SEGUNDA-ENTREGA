@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Equilibre — Hábitos saudáveis para a vida universitária</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style (4).css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 40 40" width="28" height="28">
+        <circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="13 7" stroke-linecap="round"/>
+        <path d="M14 20.5 18 24.5 26 15.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="brand-name">Equilibre</span>
+  </div>
+  <nav class="topnav">
+    <a href="#sobre">Sobre</a>
+    <a href="#painel">Painel</a>
+    <a href="#registrar">Registrar</a>
+    <a href="#metas">Metas</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="sobre">
+    <div class="hero-text">
+      <p class="eyebrow">Projeto · ODS 3 · Saúde e Bem-Estar</p>
+      <h1>
+        Sua rotina universitária<br>
+        tem espaço para <span class="hl">respirar</span>.
+      </h1>
+      <p class="hero-lede">
+        Equilibre é uma ferramenta web para estudantes acompanharem três pilares simples
+        do dia a dia — alimentação, movimento e sono — e transformarem pequenos registros
+        em hábitos que se sustentam.
+      </p>
+      <div class="hero-actions">
+        <a href="#registrar" class="btn btn-primary">Começar a registrar</a>
+        <a href="#painel" class="btn btn-ghost">Ver meu painel</a>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="orbit-ring ring-1"></div>
+      <div class="orbit-ring ring-2"></div>
+      <div class="orbit-ring ring-3"></div>
+      <div class="orbit-node node-food">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+        <span>Alimentação</span>
+      </div>
+      <div class="orbit-node node-move">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M13.5 5.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM9.8 8.9 7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7z"/></svg>
+        <span>Movimento</span>
+      </div>
+      <div class="orbit-node node-sleep">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M9.37 5.51A7.35 7.35 0 0 0 9.1 7.5c0 4.08 3.32 7.4 7.4 7.4.68 0 1.35-.09 1.99-.27A7.5 7.5 0 1 1 9.37 5.51z"/></svg>
+        <span>Sono</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEXTO -->
+  <section class="context">
+    <div class="context-inner">
+      <h2>Por que registrar hábitos importa</h2>
+      <p>
+        O ritmo acadêmico — provas, trabalhos, estágios — empurra alimentação, exercício
+        e sono para o fim da lista de prioridades. A proposta aqui não é cobrar perfeição,
+        e sim oferecer um espelho diário: o que você fez, o que ficou pendente e como isso
+        se acumula ao longo da semana.
+      </p>
+      <blockquote>
+        “O uso de tecnologias digitais voltadas à saúde pode influenciar positivamente
+        na mudança de comportamento, promovendo maior engajamento dos usuários em
+        práticas saudáveis.”
+        <cite>— Silva &amp; Santos, 2021</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- PAINEL -->
+  <section class="dashboard" id="painel">
+    <div class="section-head">
+      <p class="eyebrow">Painel</p>
+      <h2>Seu equilíbrio nos últimos 7 dias</h2>
+    </div>
+
+    <div class="dash-grid">
+      <div class="dash-card streak-card">
+        <p class="card-label">Sequência ativa</p>
+        <p class="streak-number"><span id="streakValue">0</span><span class="unit">dias</span></p>
+        <p class="card-note">Dias consecutivos com pelo menos um registro.</p>
+      </div>
+
+      <div class="dash-card">
+        <p class="card-label">Alimentação</p>
+        <div class="ring-wrap">
+          <svg class="ring" viewBox="0 0 100 100">
+            <circle class="ring-bg" cx="50" cy="50" r="42"/>
+            <circle class="ring-fg ring-food" id="ringFood" cx="50" cy="50" r="42"/>
+          </svg>
+          <span class="ring-value" id="valFood">0%</span>
+        </div>
+        <p class="card-note">Refeições equilibradas registradas na semana.</p>
+      </div>
+
+      <div class="dash-card">
+        <p class="card-label">Movimento</p>
+        <div class="ring-wrap">
+          <svg class="ring" viewBox="0 0 100 100">
+            <circle class="ring-bg" cx="50" cy="50" r="42"/>
+            <circle class="ring-fg ring-move" id="ringMove" cx="50" cy="50" r="42"/>
+          </svg>
+          <span class="ring-value" id="valMove">0%</span>
+        </div>
+        <p class="card-note">Sessões de atividade física na semana.</p>
+      </div>
+
+      <div class="dash-card">
+        <p class="card-label">Sono</p>
+        <div class="ring-wrap">
+          <svg class="ring" viewBox="0 0 100 100">
+            <circle class="ring-bg" cx="50" cy="50" r="42"/>
+            <circle class="ring-fg ring-sleep" id="ringSleep" cx="50" cy="50" r="42"/>
+          </svg>
+          <span class="ring-value" id="valSleep">0%</span>
+        </div>
+        <p class="card-note">Noites com 7h ou mais de sono.</p>
+      </div>
+    </div>
+
+    <div class="week-strip" id="weekStrip" aria-label="Resumo diário da semana"></div>
+  </section>
+
+  <!-- REGISTRAR -->
+  <section class="logger" id="registrar">
+    <div class="section-head">
+      <p class="eyebrow">Registrar</p>
+      <h2>Como foi hoje?</h2>
+      <p class="section-sub">Marque o que se aplica. Não precisa ser tudo — registrar parte do dia já conta.</p>
+    </div>
+
+    <form class="logger-form" id="loggerForm">
+      <div class="logger-grid">
+
+        <fieldset class="logger-block">
+          <legend>
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+            Alimentação
+          </legend>
+          <label class="check-row">
+            <input type="checkbox" name="food" value="cafe" />
+            <span>Tomei café da manhã</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" name="food" value="frutas" />
+            <span>Comi frutas ou vegetais</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" name="food" value="agua" />
+            <span>Bebi água ao longo do dia</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" name="food" value="evitei" />
+            <span>Evitei ultraprocessados em excesso</span>
+          </label>
+        </fieldset>
+
+        <fieldset class="logger-block">
+          <legend>
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M13.5 5.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM9.8 8.9 7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7z"/></svg>
+            Movimento
+          </legend>
+          <label class="check-row">
+            <input type="checkbox" name="move" value="caminhada" />
+            <span>Caminhei ou pedalei</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" name="move" value="treino" />
+            <span>Fiz um treino estruturado</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" name="move" value="alongamento" />
+            <span>Alonguei ou fiz pausas ativas</span>
+          </label>
+          <label class="field-row">
+            <span>Minutos ativos (estimativa)</span>
+            <input type="number" name="moveMinutes" min="0" max="300" placeholder="0" />
+          </label>
+        </fieldset>
+
+        <fieldset class="logger-block">
+          <legend>
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M9.37 5.51A7.35 7.35 0 0 0 9.1 7.5c0 4.08 3.32 7.4 7.4 7.4.68 0 1.35-.09 1.99-.27A7.5 7.5 0 1 1 9.37 5.51z"/></svg>
+            Sono
+          </legend>
+          <label class="field-row">
+            <span>Horas dormidas na noite anterior</span>
+            <input type="number" name="sleepHours" min="0" max="14" step="0.5" placeholder="0" />
+          </label>
+          <label class="check-row">
+            <input type="checkbox" name="sleep" value="qualidade" />
+            <span>Dormi sem interrupções</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" name="sleep" value="tela" />
+            <span>Reduzi telas antes de dormir</span>
+          </label>
+        </fieldset>
+
+        <fieldset class="logger-block notes-block">
+          <legend>
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+            Como você se sentiu?
+          </legend>
+          <div class="mood-row" role="radiogroup" aria-label="Humor do dia">
+            <label class="mood-option">
+              <input type="radio" name="mood" value="1" />
+              <span>😣</span>
+            </label>
+            <label class="mood-option">
+              <input type="radio" name="mood" value="2" />
+              <span>🙁</span>
+            </label>
+            <label class="mood-option">
+              <input type="radio" name="mood" value="3" checked />
+              <span>😐</span>
+            </label>
+            <label class="mood-option">
+              <input type="radio" name="mood" value="4" />
+              <span>🙂</span>
+            </label>
+            <label class="mood-option">
+              <input type="radio" name="mood" value="5" />
+              <span>😄</span>
+            </label>
+          </div>
+          <label class="field-row">
+            <span>Observações (opcional)</span>
+            <textarea name="notes" rows="2" placeholder="Algo que valeu registrar hoje..."></textarea>
+          </label>
+        </fieldset>
+
+      </div>
+
+      <div class="logger-actions">
+        <p class="logger-date" id="todayLabel"></p>
+        <button type="submit" class="btn btn-primary">Salvar registro de hoje</button>
+      </div>
+    </form>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </section>
+
+  <!-- HISTÓRICO -->
+  <section class="history">
+    <div class="section-head">
+      <p class="eyebrow">Histórico</p>
+      <h2>Seus últimos registros</h2>
+    </div>
+    <ul class="history-list" id="historyList">
+      <li class="history-empty" id="historyEmpty">Nenhum registro ainda. Comece preenchendo o formulário acima.</li>
+    </ul>
+  </section>
+
+  <!-- METAS -->
+  <section class="goals" id="metas">
+    <div class="section-head">
+      <p class="eyebrow">Metas</p>
+      <h2>Defina pequenos alvos semanais</h2>
+      <p class="section-sub">Metas realistas sustentam constância. Ajuste sempre que precisar.</p>
+    </div>
+
+    <div class="goals-grid">
+      <div class="goal-card">
+        <label for="goalFood">Refeições equilibradas por semana</label>
+        <input type="range" id="goalFood" min="0" max="7" value="5" />
+        <p class="goal-value"><span id="goalFoodVal">5</span> / 7 dias</p>
+      </div>
+      <div class="goal-card">
+        <label for="goalMove">Dias ativos por semana</label>
+        <input type="range" id="goalMove" min="0" max="7" value="3" />
+        <p class="goal-value"><span id="goalMoveVal">3</span> / 7 dias</p>
+      </div>
+      <div class="goal-card">
+        <label for="goalSleep">Noites com sono adequado</label>
+        <input type="range" id="goalSleep" min="0" max="7" value="5" />
+        <p class="goal-value"><span id="goalSleepVal">5</span> / 7 dias</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE O PROJETO -->
+  <section class="about">
+    <div class="about-inner">
+      <h2>Sobre este projeto</h2>
+      <p>
+        Esta aplicação foi concebida como um guia educativo para estudantes de tecnologia,
+        alinhada à ODS 3 (Saúde e Bem-Estar) da ONU. A proposta combina modelagem orientada
+        a objetos, estruturas de dados para armazenamento de registros de hábitos e uma
+        interface centrada no usuário — reunindo, em escala reduzida, os conceitos discutidos
+        no trabalho que a originou.
+      </p>
+      <p class="authors">
+        Eduardo Mendes Panont · Davi Lucas Schmitt Acencio · Nicolas Ziburys Grecco
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Equilibre — protótipo educacional. Os dados ficam apenas nesta sessão do navegador.</p>
+</footer>
+
+<script src="script (6).js"></script>
+</body>
+</html>
